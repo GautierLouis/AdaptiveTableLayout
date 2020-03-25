@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-apply plugin: 'maven'
-apply plugin: 'signing'
+//apply plugin: 'maven-publish'
+//apply plugin: 'signing'
 
 publishing {
     repositories {
