@@ -33,11 +33,13 @@ publishing {
             //from components.android
             artifact androidSourcesJar
             artifact androidJavadocsJar
+            artifactId = 'adaptivetablelayout'
 
             pom {
                 name = POM_NAME
                 description = POM_DESCRIPTION
                 url = POM_URL
+                version = VERSION_NAME
                 licenses {
                     license {
                         name = POM_LICENCE_NAME

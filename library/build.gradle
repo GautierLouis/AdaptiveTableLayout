@@ -9,9 +9,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 8
-        versionName "1.2.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        versionName VERSION_NAME
     }
     buildTypes {
         release {
@@ -55,7 +53,6 @@ task androidSourcesJar(type: Jar) {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$support_version"
 }
 apply from: 'gradle-mvn-push.gradle'
