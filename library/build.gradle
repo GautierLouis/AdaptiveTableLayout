@@ -58,4 +58,4 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$support_version"
 }
-//apply from: 'gradle-mvn-push.gradle'
+apply from: 'gradle-mvn-push.gradle'

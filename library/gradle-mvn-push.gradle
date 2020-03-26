@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-//apply plugin: 'maven-publish'
-//apply plugin: 'signing'
 
 publishing {
     repositories {
         maven {
             name = "MavenCentral"
-            val releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-            val snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
             url = getVersion().toString().endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
                 username = MAVEN_UPLOAD_USER
@@ -31,10 +29,10 @@ publishing {
         }
     }
     publications {
-        create(type: MavenPublication, name: "mavenJava") {
-            from(components["java"])
-            artifact(tasks["androidSourcesJar"])
-            artifact(tasks["androidJavadocsJar"])
+        release(MavenPublication) {
+            //from components.android
+            artifact androidSourcesJar
+            artifact androidJavadocsJar
 
             pom {
                 name = POM_NAME
@@ -64,9 +62,9 @@ publishing {
 }
 
 signing {
-    val key = project.hasProperty("PGP_SIGNING_KEY") ? project.PGP_SIGNING_KEY : ""
-    val pwd = project.hasProperty("PGP_SIGNING_PASSWORD") ? project.PGP_SIGNING_PASSWORD : ""
+    def key = findProperty("PGP_SIGNING_KEY")
+    def pwd = findProperty("PGP_SIGNING_PASSWORD")
 
     useInMemoryPgpKeys(key, pwd)
-    sign(publishing.publications["mavenJava"])
+    sign publishing.publications.release
 }
