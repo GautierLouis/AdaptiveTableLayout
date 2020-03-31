@@ -19,7 +19,7 @@ The main goal of the library is to apply all its functions in the process of wor
 by gradle : 
 ```groovy
 dependencies {
-    implementation "com.cleveroad:adaptivetablelayout:1.2.1"
+    implementation "com.cleveroad:adaptivetablelayout:1.3.0"
 }
 ```
 ### Features ###
