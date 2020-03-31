@@ -18,4 +18,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./gradlew -PMAVEN_UPLOAD_USER=${{ secrets.SONATYPE_USER }} -PMAVEN_UPLOAD_PWD=${{ secrets.SONATYPE_PASSWORD }} build
+      run: ./gradlew -PMAVEN_UPLOAD_USER=${{ secrets.SONATYPE_USER }} -PMAVEN_UPLOAD_PWD=${{ secrets.SONATYPE_PASSWORD }} :library:build
