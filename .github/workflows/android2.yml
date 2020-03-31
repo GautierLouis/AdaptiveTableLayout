@@ -18,4 +18,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Publish with Gradle
-      run: ./gradlew -PMAVEN_UPLOAD_USER=${{ secrets.SONATYPE_USER }} -PMAVEN_UPLOAD_PWD=${{ secrets.SONATYPE_PASSWORD }} -PPGP_SIGNING_KEY="${{ secrets.PGP_SIGNING_KEY }}" -PPGP_SIGNING_PASSWORD="${{ secrets.PGP_SIGNING_PASSWORD }}" :library:build :library:publish
+      run: ./gradlew -PMAVEN_UPLOAD_USER=${{ secrets.SONATYPE_USER }} -PMAVEN_UPLOAD_PWD=${{ secrets.SONATYPE_PASSWORD }} -PPGP_SIGNING_KEY="${{ secrets.PGP_SIGNING_KEY }}" -PPGP_SIGNING_PASSWORD="${{ secrets.PGP_SIGNING_PASSWORD }}" :library:build :library:publishAllPublicationsToMavenCentralRepository
