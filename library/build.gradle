@@ -19,7 +19,7 @@ android {
     }
 }
 
-task apklib(type: Zip){
+task apklib(type: Zip) {
     appendix = extension = 'apklib'
 
     from 'AndroidManifest.xml'
@@ -36,7 +36,7 @@ task androidJavadocs(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     options.links("http://docs.oracle.com/javase/7/docs/api/");
-    options.linksOffline "http://d.android.com/reference","${android.sdkDirectory}/docs/reference"
+    options.linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
     exclude '**/BuildConfig.java'
     exclude '**/R.java'
     failOnError = false
@@ -55,4 +55,5 @@ task androidSourcesJar(type: Jar) {
 dependencies {
     implementation "androidx.appcompat:appcompat:$support_version"
 }
+
 apply from: 'gradle-mvn-push.gradle'
