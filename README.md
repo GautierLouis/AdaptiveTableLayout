@@ -19,7 +19,7 @@ The main goal of the library is to apply all its functions in the process of wor
 by gradle : 
 ```groovy
 dependencies {
-    implementation "io.github.daxium:adaptivetablelayout:1.3.0"
+    implementation "io.github.daxium:adaptivetablelayout:1.3.1"
 }
 ```
 ### Features ###
